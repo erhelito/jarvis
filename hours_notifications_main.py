@@ -14,8 +14,6 @@ while True:
     minutes = modules.get_time(asctime())[2]
     seconds = modules.get_time(asctime())[3]
 
-    minutes = 0
-
     modules.clock(hours, minutes, seconds, sleep, system)
 
     if minutes in {0, 15, 30, 45}:
