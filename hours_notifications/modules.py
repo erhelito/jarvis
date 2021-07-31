@@ -1,8 +1,11 @@
 #!/usr/bin/python3.8
 # -*-coding:Utf-8 -*
 
-def get_time(asctime) :
-    raw_time = asctime
+from time import asctime, sleep
+from os import system
+
+def get_time() :
+    raw_time = asctime()
     time = raw_time[11:-5]
     hours = int(time[0:2])
     minutes = int(time[3:5])
@@ -10,7 +13,7 @@ def get_time(asctime) :
 
     return time, hours, minutes, seconds
 
-def clock(hours, minutes, seconds, sleep, system) :
+def clock(hours, minutes, seconds) :
     print("{0} h {1} min {2} s".format(hours, minutes, seconds))
     sleep(1)
     system("clear")

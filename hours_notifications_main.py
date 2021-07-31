@@ -2,19 +2,18 @@
 # -*-coding:Utf-8 -*
 
 from os import system, path
-from time import asctime, sleep
+from time import sleep
 from hours_notifications import modules
 
 path = path.abspath("")
-print(path)
 
 while True:
-    time = modules.get_time(asctime())[0]
-    hours = modules.get_time(asctime())[1]
-    minutes = modules.get_time(asctime())[2]
-    seconds = modules.get_time(asctime())[3]
+    time = modules.get_time()[0]
+    hours = modules.get_time()[1]
+    minutes = modules.get_time()[2]
+    seconds = modules.get_time()[3]
 
-    modules.clock(hours, minutes, seconds, sleep, system)
+    modules.clock(hours, minutes, seconds)
 
     if minutes in {0, 15, 30, 45}:
         command = modules.command_function(path, hours, minutes)[0]
