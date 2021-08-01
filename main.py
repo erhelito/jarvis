@@ -3,7 +3,7 @@
 
 #import hours_notifications_main
 from hours_notifications import modules as time_modules
-from modules import activate, activate_jarvis, speech_recognition
+from modules import activate_jarvis
 
 import speech_recognition as sr
 import pyttsx3
@@ -12,7 +12,8 @@ import pyttsx3
 language = "fr"
 
 while True :
-    jarvis = activate()
+    jarvis = activate_jarvis(language)
+    print(jarvis)
 
 #time
 hours = time_modules.get_time()[1]
