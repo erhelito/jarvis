@@ -9,10 +9,13 @@ import speech_recognition as sr
 import pyttsx3
 
 #choose between fr and en
-language = "fr"
+language = "en"
 
 while True :
-    jarvis = activate_jarvis(language)
+    jarvis = False
+
+    while not jarvis :
+        jarvis = activate_jarvis(language)
     print(jarvis)
 
 #time
